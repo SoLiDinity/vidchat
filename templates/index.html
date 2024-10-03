@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    
+    <script src="{{url_for('static', filename='scripts/index.js')}}"></script>
+
+    <title>Video Chat</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="hero-image">
+        <div class="main-logo">
+          <h1>VideoChat</h1>
+        </div>
+      </div>
+
+      <div id="enter-meeting-form">
+        <form id="room_form" class="neumorph-shadow" method="POST">
+          <div class="form-text-div">
+            <h2 class="title">Join Meeting</h2>
+            <p class="subtitle">Masuk dan Temukan Momen melalui Meeting!</p>
+          </div>
+          <input
+            type="text"
+            name="room_id"
+            id="room_id"
+            placeholder="Masukan ID Room"
+            maxlength="16"
+            required
+            autocomplete="off"
+          />
+          <div id="form-btn-container">
+            <input type="button" value="Buat ID Acak" class="btn" id="meet-id-generator-btn" />
+            <input type="submit" value="Masuk" class="btn" />
+          </div>
+        </form>
+
+        <div class="break-line">
+          <hr />
+          atau
+          <hr />
+        </div>
+
+        <form id="broadcast_form" class="neumorph-shadow" method="POST">
+            <div class="form-text-div">
+                <h2 class="title">Join Live Broadcast</h2>
+                <p class="subtitle">Saksikan Siaran Langsung Tanpa Batas!</p>
+              </div>
+          <input
+            type="text"
+            name="broadcast_id"
+            id="broadcast_id"
+            placeholder="Masukan ID Broadcast"
+            maxlength="16"
+            required
+            autocomplete="off"
+          />
+          <div id="form-btn-container">
+            <input type="button" value="Buat ID Acak" class="btn" id="broadcast-id-generator-btn" />
+            <input type="submit" value="Masuk" class="btn" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

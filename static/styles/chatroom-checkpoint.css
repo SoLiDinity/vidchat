@@ -1,0 +1,218 @@
+#permission_alert {
+  position: fixed;
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
+  display: none;
+  background-color: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: all;
+}
+
+#permission_alert .pop-up {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 300px;
+  gap: 1rem;
+  border-radius: var(--border-radius-value);
+}
+
+#permission_alert .pop-up i {
+  font-size: 4rem;
+  color: rgb(153, 32, 32);
+}
+
+#permission_alert .pop-up strong {
+  text-align: center;
+  font-size: 20px;
+}
+
+#permission_alert .pop-up .btn {
+  background-color: rgb(153, 32, 32);
+}
+
+#permission_alert .pop-up .btn:hover {
+  color: rgb(153, 32, 32);
+}
+
+#chatroom-checkpoint-main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dim-white);
+}
+
+#chatroom-checkpoint-main-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  /* background-color: aquamarine; */
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.video-options {
+  /* background-color: RED; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--dim-white);
+  padding: 1rem;
+  border-radius: var(--border-radius-value);
+}
+
+.video-options .vid-wrapper {
+  /* background-color: gray; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 3/2;
+}
+
+.video-options .vid-wrapper #local_vid {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+  border-radius: calc(var(--border-radius-value) / 2);
+}
+
+.video-options .video-options-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#btn_audio_mute,  #btn_video_display {
+  width: auto;
+  min-width: 65px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  aspect-ratio: 1/1;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background-color: var(--btn-color-primary);
+  color: var(--btn-color-secondary);
+
+  background-image: linear-gradient(to right, white, white);
+  background-image: linear-gradient(to right, white, white);
+  background-size: 0% 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+
+  transition: background-size 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+#btn_audio_mute:hover, #btn_video_display:hover {
+  cursor: pointer;
+  background-size: 100% 100%;
+  color: var(--btn-color-primary);
+  transform: scale(1.05);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.display-name-form-container {
+  background-color: var(--dim-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-value);
+}
+
+.display-name-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-name-form-wrapper .text-container {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;;
+}
+
+.display-name-form-wrapper .text-container p {
+    color: gray;
+    font-weight: light;
+    font-size: 14px;
+}
+
+.display-name-form-wrapper .text-container h2 {
+    color: var(--btn-color-primary);
+    font-size: 50px;
+    word-break: break-all;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: calc(var(--border-radius-value)/2);
+    border: 2px solid lightgray;
+}
+
+.display-name-form-wrapper form input{
+    border-radius: calc(var(--border-radius-value)/2);
+}
+
+.display-name-form-wrapper form input[type='text'] {
+  padding: 1rem;
+  font-size: 16px;
+  margin: 1rem 0;
+  width: 100%;
+  outline: 2px solid lightgray;
+  border: none;
+}
+
+.display-name-form-wrapper form input[type='text']:focus {
+  outline: 3px solid var(--btn-color-primary);
+}
+
+
+#btn_audio_mute .fa-microphone-slash {
+    color: white;
+    transition: .3s;
+}
+
+#btn_audio_mute:hover .fa-microphone-slash {
+    color: rgb(153, 32, 32);
+}
+
+#btn_video_display .fa-video-slash {
+    color: white;
+    transition: .3s;
+}
+
+#btn_video_display:hover .fa-video-slash {
+    color: rgb(153, 32, 32);
+}
+
+.exit-hyperlink {
+  background-color: rgb(193, 203, 227);
+  color: var(--btn-color-primary);
+}
+
+.exit-hyperlink:hover {
+  color: rgb(153, 32, 32);
+}

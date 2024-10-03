@@ -1,0 +1,257 @@
+#room_container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+}
+
+#user-videos-wrapper {
+  background-color: rgb(41, 44, 53);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  padding-left: calc(2rem - 12px);
+  padding-bottom: 130px;
+
+  width: 100%;
+  min-height: 100%;
+  height: fit-content;
+}
+
+.video-grid {
+  /* background-color: gray; */
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  gap: 2rem;
+}
+
+.video-grid .video-item {
+  min-width: 100px;
+  width: 23vw;
+
+  height: fit-content;
+  border-radius: var(--border-radius-value);
+}
+
+.video-grid .vid-wrapper {
+  background-color: rgb(41, 44, 53);
+  height: auto;
+  padding: 0.75rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  aspect-ratio: 3/2;
+
+  border-radius: var(--border-radius-value);
+}
+
+.video-grid video {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+  border-radius: calc(var(--border-radius-value) / 2);
+}
+
+.display-name {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  /* font-weight: bold; */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.33);
+  font-size: 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.6rem 1rem 0.5rem 1rem;
+  max-width: 100%;
+  display: block;
+  text-align: center;
+  cursor: default;
+}
+
+#control_box {
+  background-color: blue;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 1rem;
+  background-color: white;
+
+  background-color: rgb(41, 44, 53);
+  box-shadow: 0px -10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#local_vid {
+  transform: scaleX(-1);
+}
+
+#control_box button {
+  width: auto;
+  width: 65px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  aspect-ratio: 1/1;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background-color: var(--btn-color-primary);
+  color: var(--btn-color-secondary);
+
+  background-image: linear-gradient(to right, white, white);
+  background-image: linear-gradient(to right, white, white);
+  background-size: 0% 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-size 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+#control_box button:hover {
+  cursor: pointer;
+  background-size: 100% 100%;
+  color: var(--btn-color-primary);
+  transform: scale(1.05);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+#btn_end_call i {
+  color: white;
+  transition: 0.3s;
+}
+
+#btn_end_call:hover i {
+  color: rgb(218, 24, 24);
+}
+
+#chat-container {
+  top: 10px;
+  width: 300px;
+  height: calc(100% - 119px);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dim-white);
+  border-radius: var(--border-radius-value);
+}
+
+.show-chat {
+  right: 10px;
+  transition: .5s ease;
+  opacity: 1;
+}
+
+.hide-chat {
+  right: -350px;
+  transition: .5s ease;
+  opacity: 0;
+}
+
+#chat-box {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#chat-form {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+}
+
+#chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: calc(var(--border-radius-value)/2);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#chat-input:focus {
+  outline: 1.5px solid gray;
+}
+
+.sent-message, .received-message {
+  margin: 1rem 0rem 1rem 1rem;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sent-message {
+  float: right;
+  clear: both;
+}
+.received-message {
+  float: left;
+  clear: both;
+}
+
+.sent-message p, .received-message p {
+  padding: .5rem;
+  margin-top: .25rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: rgb(220, 220, 253);
+  border-radius: 5px;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  width: fit-content;
+  max-width: 200px;
+}
+
+.sent-message p {
+  background-color: #b2ffc8;
+  color: black;
+  align-self: flex-end;
+}
+
+.received-message p{
+  background-color: #ffffff;
+  color: black;
+}
+
+.sent-message-btn {
+  aspect-ratio: 1/1;
+  width: fit-content;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  outline: 1.5px solid gray;
+  scale: 1;
+}
+
+.sent-message-btn:hover {
+  scale: 1;
+}
+
+#chat-container {
+  position: fixed;
+  overflow: auto;
+}

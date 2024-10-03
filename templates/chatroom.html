@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <link rel="stylesheet" href="../static/styles/style.css" />
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var myRoomID = '{{room_id}}';
+      var myName = '{{display_name}}';
+      var audioMuted = '{{mute_audio}}' == '1';
+      var videoDisplayed = '{{display_video}}' == '1';
+      console.log('>> {{mute_audio}}, {{display_video}}', audioMuted, videoDisplayed);
+    </script>
+    <script src="{{url_for('static', filename='scripts/chatroom_ui.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/chatroom_networking.js')}}"></script>
+    <script src="https://kit.fontawesome.com/f2ead6d816.js" crossorigin="anonymous"></script>
+
+    <script src="../static/scripts/chatroom_ui.js"></script>
+    <script src="../static/scripts/chatroom_networking.js"></script>
+
+    <title>Video Chat [{{room_id}}]</title>
+  </head>
+  <body>
+    <!-- <h1>Room: <span>{{room_id}}</span></h1>
+    <div id="room_link"></div> -->
+
+    <div id="room_container">
+      <div id="chat-container" class="hide-chat">
+        <div id="chat-box" class="chat-box">
+
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit" class="btn sent-message-btn"><i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+      <div id="user-videos-wrapper">
+        <div id="video_grid" class="video-grid">
+          <div id="div_local_vid" class="video-item neumorph-shadow">
+            <div class="vid-wrapper">
+              <video id="local_vid" autoplay muted></video>
+              <div class="display-name">{{display_name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="control_box">
+        <button id="btn_audio_mute"><i id="mic_logo" class="fa-solid fa-microphone"></i></button>
+        <button id="btn_video_display"><i id="vid_logo" class="fa-solid fa-video"></i></button>
+        <button id="btn_end_call" style="background-color: rgb(218, 24, 24)">
+          <i class="fa-solid fa-phone-slash"></i>
+        </button>
+        <button id="btn_chat"><i class="fa-solid fa-message"></i></button>
+        <button id="btn_option"><i class="fa-solid fa-gear"></i></button>
+      </div>
+    </div>
+  </body>
+</html>
