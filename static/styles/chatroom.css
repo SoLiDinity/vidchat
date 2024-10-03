@@ -198,7 +198,7 @@
 }
 
 .sent-message, .received-message {
-  margin: 1rem 0rem 1rem 1rem;
+  margin: 1rem 0rem 1rem .5rem;
   font-size: 14px;
 
   display: flex;
@@ -208,10 +208,21 @@
 .sent-message {
   float: right;
   clear: both;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .received-message {
   float: left;
   clear: both;
+}
+
+.sent-message strong, .received-message strong {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sent-message p, .received-message p {
