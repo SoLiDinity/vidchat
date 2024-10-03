@@ -2,7 +2,6 @@
 
 Aplikasi video call dan chatting berbasis web dengan memanfaatkan socket programming
 
-<br>
 
 ## 📄 How to Install
 
