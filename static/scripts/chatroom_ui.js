@@ -57,6 +57,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   chatBtn.addEventListener('click', () => {
     const chatContainer = document.getElementById('chat-container')
+    const chatNotify = document.getElementById('chat-notify');
+
+    if (chatNotify.classList.contains('show-chat-notif')) {
+      chatNotify.classList.remove('show-chat-notif');
+      chatNotify.classList.add('hide-chat-notif');
+    }
 
     if (!chatContainer.classList.contains('show-chat')) {
       chatContainer.classList.add('show-chat')

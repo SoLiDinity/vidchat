@@ -60,14 +60,16 @@ socket.on('user-connect', (data) => {
   addVideoElement(peer_id, display_name);
 });
 
-socket.on('my-sid', function(data) {
+socket.on('my-sid', function (data) {
   myID = data.sid;
-  console.log("My session ID: " + myID);
+  console.log('My session ID: ' + myID);
 });
 
 socket.on('receive-message', (data) => {
   const isSelf = data.sid === myID;
-    addMessage(data.message, data.name, isSelf)
+  if (data.message && data.name) {
+    addMessage(data.message, data.name, isSelf);
+  }
 });
 
 socket.on('user-disconnect', (data) => {
@@ -95,18 +97,26 @@ socket.on('user-list', (data) => {
 });
 
 function addMessage(message, sender, isSelf) {
-  const chatBox = document.getElementById('chat-box')
+  const chatBox = document.getElementById('chat-box');
   const messageElement = document.createElement('div');
-    if (isSelf) {
-        messageElement.classList.add('sent-message');
-    } else {
-        messageElement.classList.add('received-message');
+
+  const chatNotify = document.getElementById('chat-notify');
+
+  if (isSelf) {
+    messageElement.classList.add('sent-message');
+  } else {
+    messageElement.classList.add('received-message');
+
+    if (!chatNotify.classList.contains('show-chat-notif')) {
+      chatNotify.classList.remove('hide-chat-notif');
+      chatNotify.classList.add('show-chat-notif');
     }
+  }
 
-    messageElement.innerHTML = `<strong>${sender}</strong> <p>${message}</p>`;
+  messageElement.innerHTML = `<strong>${sender}</strong> <p>${message}</p>`;
 
-    chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.appendChild(messageElement);
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function closeConnection(peer_id) {

@@ -166,6 +166,14 @@
   opacity: 1;
 }
 
+.show-chat-notif {
+  opacity: 1;
+}
+
+.hide-chat-notif {
+  opacity: 0;
+}
+
 .hide-chat {
   right: -350px;
   transition: .5s ease;
@@ -197,6 +205,21 @@
   outline: 1.5px solid gray;
 }
 
+#btn_chat {
+  position: relative;
+}
+
+.chat-notify {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
 .sent-message, .received-message {
   margin: 1rem 0rem 1rem .5rem;
   font-size: 14px;
@@ -213,6 +236,7 @@
   flex-direction: column;
   align-items: flex-end;
 }
+
 .received-message {
   float: left;
   clear: both;
