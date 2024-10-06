@@ -17,7 +17,6 @@ def index():
     if request.method == "POST":
         room_id = request.form['room_id']
         return redirect(url_for("entry_checkpoint", room_id=room_id))
-
     return render_template("index.html")
 
 @app.route("/r/<string:room_id>/")
@@ -34,8 +33,9 @@ def entry_checkpoint(room_id):
         display_video = request.form['display_video']
         session[room_id] = {"name": display_name, "mute_audio": mute_audio, "display_video": display_video}
         return redirect(url_for("enter_room", room_id=room_id))
-    
     return render_template("chatroom_checkpoint.html", room_id=room_id)
+
+
 
 @app.route("/r/leave/")
 def leave_room():
