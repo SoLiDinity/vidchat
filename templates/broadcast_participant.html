@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Broadcast Participant</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <link rel="stylesheet" href="../static/styles/style.css" />
+
+    <script>
+      var myBroadcastID = '{{ broadcast_id }}'; // Pass the broadcast ID from Flask
+      var myName = '{{display_name}}';
+      var isHost = false;
+    </script>
+
+    <script src="{{url_for('static', filename='scripts/broadcast_networking.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/broadcast_ui.js')}}"></script>
+    <script src="https://kit.fontawesome.com/f2ead6d816.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="broadcast_container">
+      <div id="chat-container" class="hide-chat">
+        <div id="chat-box" class="chat-box"></div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit" class="btn sent-message-btn"><i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+      <div id="video-container">
+        <div id="host-videos-wrapper">
+          <div id="video_grid" class="video-grid"></div>
+        </div>
+      </div>
+
+      <div id="control_box">
+        <button id="btn_end_call" style="background-color: rgb(218, 24, 24)">
+          <i class="fa-solid fa-phone-slash"></i>
+        </button>
+        <button id="btn_chat">
+          <i class="fa-solid fa-message"></i>
+          <div id="chat-notify" class="chat-notify hide-chat-notif"></div>
+        </button>
+        <button id="btn_option"><i class="fa-solid fa-gear"></i></button>
+      </div>
+    </div>
+  </body>
+</html>
