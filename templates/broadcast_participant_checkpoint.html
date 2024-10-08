@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <script src="{{url_for('static', filename='scripts/broadcast_participant_checkpoint.js')}}"></script>
+    <title>Participant Checkpoint [{{broadcast_id}}]</title>
+  </head>
+  <body>
+    <div id="broadcast-checkpoint-main-container">
+      <div id="broadcast-checkpoint-main-wrapper">
+        <div class="display-name-form-container neumorph-shadow">
+          <div class="display-name-form-wrapper">
+            <div class="text-container">
+              <p>Anda akan memasuki room dengan ID:</p>
+              <h2 class="room-id">{{broadcast_id}}</h2>
+              <p>Masukkan nama tampilan anda agar anda mudah dikenali oleh peserta lainnya!</p>
+            </div>
+
+            <form method="POST" onsubmit="return validate()">
+              <input type="text" name="display_name" id="display_name" placeholder="Nama Tampilan" autofocus required />
+              <input type="submit" value="Masuk" class="btn" />
+            </form>
+
+            <a href="/" class="btn exit-hyperlink" style="margin-top: .5rem;">Keluar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}" />
+    <script src="{{url_for('static', filename='scripts/broadcast_host_checkpoint.js')}}"></script>
+    <script src="https://kit.fontawesome.com/f2ead6d816.js" crossorigin="anonymous"></script>
+    <title>Host Checkpoint [{{broadcast_id}}]</title>
+  </head>
+  <body>
+    <div id="permission_alert" class="alert" role="alert">
+      <div class="pop-up">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <strong>Tolong izinkan website untuk mengakses kamera dan mikrofon!</strong>
+        <a class="btn" href="/">Kembali</a>
+      </div>
+    </div>
+
+    <div id="chatroom-checkpoint-main-container">
+      <div id="chatroom-checkpoint-main-wrapper">
+        <div class="video-options neumorph-shadow">
+          <div class="vid-wrapper">
+            <video id="local_vid" autoplay muted></video>
+          </div>
+          <div class="video-options-btn">
+            <button id="btn_audio_mute"><i id="mic_logo" class="fa-solid fa-microphone"></i></button>
+            <button id="btn_video_display"><i id="vid_logo" class="fa-solid fa-video"></i></button>
+          </div>
+        </div>
+
+        <div class="display-name-form-container neumorph-shadow">
+          <div class="display-name-form-wrapper">
+            <div class="text-container">
+              <p>Anda akan menjadi host untuk room dengan ID:</p>
+              <h2 class="room-id">{{broadcast_id}}</h2>
+              <p>Masukkan nama tampilan anda dan konfigurasikan mic serta video:</p>
+            </div>
+
+            <form method="POST" onsubmit="return validate()">
+              <input type="text" name="display_name" id="display_name" placeholder="Nama Tampilan" autofocus required />
+              <input type="hidden" value="0" name="mute_audio" id="mute_audio_input" />
+              <input type="hidden" value="0" name="display_video" id="display_video_input" />
+              <input type="submit" value="Masuk" class="btn" />
+            </form>
+
+            <a href="/" class="btn exit-hyperlink" style="margin-top: .5rem;">Keluar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
